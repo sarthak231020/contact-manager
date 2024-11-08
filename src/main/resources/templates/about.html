@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> This is about page </h1>
+
+    <hr/>
+
+    <div class="host-tag" th:insert="~{base :: parent('one','two')}">
+        <section> This is first section....</section>
+        <section id = "fragid"> this is second segment</section>
+    </div>
+
+    <div class="host2-tag" th:insert="~{base :: parential(~{::.fragclass})}">
+        <section>This is dynamic content</section>
+        <section id="fragid"> This is dynamic content through id </section>
+        <section class="fragclass"> This is dynamic content through class </section>
+    </div>
+
+    <!-- here is the beauty of thymeleaf -->
+    <div class="test-for-dynamic-page" th:replace = "${isLoggedIn} ? ~{base :: parential(~{::.loggedIn})} : ~{base :: parential(~{::.guestUser})}">
+
+        <section class="loggedIn"> this content will be seen in case of user already logged in.....</section>
+
+        <section class="guestUser"> this content is for guest user.......</section>
+
+    </div>
+
+
+</body>
+</html>

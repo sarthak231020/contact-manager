@@ -1,0 +1,20 @@
+<div class="parent-fragment" th:fragment="parent(x,y)">
+    <h1> This is parent fragment </h1>
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam vel blanditiis quis nobis earum, qui quibusdam ex suscipit eligendi officiis omnis voluptates, fugiat laborum tempora? Adipisci saepe incidunt delectus labore. </p>
+
+    <h1>Value of x : <span th:text="${x}"></span></h1>
+    <h1>Value of y : <span th:text="${y}"></span></h1>
+
+</div>
+
+
+<div class="fragment-2" th:fragment="parential(content)">
+    <h1>this fragment is displays dynamic content</h1>
+    <div th:insert="${content}"> </div>
+    
+</div> 
+
+
+<div class="fragDynamicPage" th:fragment="dynamic(isLoggedin)">
+    <h1> this is segment </h1>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">Parent Page</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link 
+        href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" 
+        rel="stylesheet" 
+    />
+</head>
+<body>
+
+    <ul class="p-4">
+        <li><a data-th-href="@{home}"></a> home page </li>
+        <li><a data-th-href="@{services}"></a> service page </li>
+        <li><a data-th-href="@{about}"></a> about page </li>
+    </ul>
+    <div class = "p-4">
+    <section data-th-replace="${content}"></section>
+    <th:block data-th-replace="${script}"></th:block>
+    
+    <br>
+    <h1>This is base ka content</h1>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>
