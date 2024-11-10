@@ -22,7 +22,7 @@ public class PageController {
         return "home";
     }
 
-    
+
 
     @RequestMapping("/about")
     public String about(Model model)
@@ -39,6 +39,14 @@ public class PageController {
         return "service";
     }
 
+    @RequestMapping("/contact")
+    public String contactus()
+    {
+        System.out.println("contact us page is loading.....");
+        return "contactus";
+    }
+
+
     @RequestMapping("/child1")
     public String childOne()
     {
@@ -53,5 +61,26 @@ public class PageController {
         // For testing the page layout things....
         System.out.println("This is child two page...");
         return "child2";
+    }
+
+    @RequestMapping("/login")
+    public String login()
+    {
+        System.out.println("This is login page...");
+        return "login";
+    }
+
+    @RequestMapping("/signup")
+    public String signup()
+    {
+        System.out.println("This is sign up page...");
+        return "signup";
+    }
+
+    @RequestMapping("/contactus")
+    public String contactUs()
+    {
+        System.out.println("This is contact us page...");
+        return "signup";
     }
 }

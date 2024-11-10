@@ -1,20 +1,30 @@
-<div class="parent-fragment" th:fragment="parent(x,y)">
-    <h1> This is parent fragment </h1>
-    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam vel blanditiis quis nobis earum, qui quibusdam ex suscipit eligendi officiis omnis voluptates, fugiat laborum tempora? Adipisci saepe incidunt delectus labore. </p>
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">Parent Page</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link 
+        href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" 
+        rel="stylesheet" 
+    />
+</head>
+<body>
 
-    <h1>Value of x : <span th:text="${x}"></span></h1>
-    <h1>Value of y : <span th:text="${y}"></span></h1>
-
-</div>
-
-
-<div class="fragment-2" th:fragment="parential(content)">
-    <h1>this fragment is displays dynamic content</h1>
-    <div th:insert="${content}"> </div>
+    <ul class="p-4">
+        <li><a data-th-href="@{home}"></a> home page </li>
+        <li><a data-th-href="@{services}"></a> service page </li>
+        <li><a data-th-href="@{about}"></a> about page </li>
+    </ul>
+    <div class = "p-4">
+    <section data-th-replace="${content}"></section>
+    <th:block data-th-replace="${script}"></th:block>
     
-</div> 
-
-
-<div class="fragDynamicPage" th:fragment="dynamic(isLoggedin)">
-    <h1> this is segment </h1>
-</div>
+    <br>
+    <h1>This is base ka content</h1>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>
